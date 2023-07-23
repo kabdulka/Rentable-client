@@ -1,0 +1,23 @@
+@use "./styles/mixins" as *;
+@use "./styles/variables" as *;
+
+* {
+    padding: 0rem;
+    margin: 0rem;
+    box-sizing: border-box;
+    // font here
+    font-family: "",Arial, Helvetica, sans-serif;
+    // filter: brightness(150%);
+    // background: rgb(0,0,0,0.9);
+}
+
+
+
+.app {
+    // background: rgb(0,0,0,0.35);
+    // filter: brightness(50%);
+    background-color: $modal-background;
+}
+
+
+

@@ -1,0 +1,92 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+
+.progress-bar__items {
+    display: flex;
+    // justify-content: gap;
+    justify-content: center;
+    // gap: 1rem;
+    align-items: center;
+    // gap: 1.25rem;
+    // border: red 1px solid;
+    // margin-left: 0.25rem;
+    // margin-right: 0.25rem;
+    height: 5rem;
+    color: $navbar-active;
+    margin-right: 3.75rem;
+  
+}
+
+.progress-bar__item {
+
+    width: 5rem;
+    // position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    // &::marker {
+    //     font-size: 2rem;
+    //     color: $marker;
+    //     padding: 0rem;
+    //     margin: 0rem;
+    // }
+}
+
+.progress-bar__line {
+    // position: absolute;
+    // top: 58%;
+    // border: green solid 1px;
+    height: 0.215rem;
+    width: 100%;
+    background-color: $marker;
+    opacity: 0.5;
+    transition: all 0.5s;
+    &--completed {
+        opacity: 1;
+        background-color: $navbar-active;
+        // transition: all 0.5s;
+    }
+
+    &--first {
+        visibility: hidden;
+    }
+}
+
+.progress-bar__circle {
+    border-radius: 100%;
+    height: 0.75rem;
+    width: 0.75rem;
+    background-color: $marker;
+    opacity: 0.5;
+    // transition: all 0.5s;
+    &--completed {
+        opacity: 1;
+        background-color: $navbar-active;
+        // transition: all 0.5s;
+    }
+
+    @include tablet {
+        height: 1rem;
+        width: 1rem;
+    }
+
+    &--active {
+        height: 1.25rem;
+        width: 1.5rem;
+        background-color: white;
+        border: $navbar-active solid 3px;
+        transition: all 0.5s;
+
+        @include tablet {
+            height: 1.5rem;
+            width: 1.75rem;
+        }
+    }
+
+    // &--first {
+    //     display: flex;
+    //     justify-content: flex-end;
+    //     // margin-left: 4rem;
+    // }
+}

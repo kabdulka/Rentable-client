@@ -1,0 +1,187 @@
+@use '../../styles/mixins' as *;
+@use "../../styles/variables" as *;
+
+.navbar {
+    // display: none;
+    // background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    gap: 2rem;
+    height: 100vh;
+    width: 0%;
+    background-color: $navbar-background;
+
+    @media (max-width: 768px) {
+        
+        transition: ease-out 0.25s all;
+    }
+
+    // background-color: aliceblue;
+
+    position: fixed;
+    z-index: 20;
+
+    &--mobile {
+        box-shadow: 5px 10px 8px 10px #c8c8c8;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 100;
+    }
+
+    @include tablet {
+        width: 100%;
+        flex-direction: row;
+        height: 4rem;
+        box-shadow: 5px 10px 8px 10px #c8c8c8;
+        padding: 1rem 2rem;
+    }
+
+    &__list {
+        display: none;
+        transition: all 0.25s;
+        // gap: 1rem;
+
+        &--mobile {
+            width: 100%;
+            height: 100%;
+      
+            @include reset-list-styles(flex, column, "", "");
+            // gap: 1.5rem;
+            transition: all 0.25s linear;
+        }
+
+        @include tablet {
+
+            width: 100%;
+            @include reset-list-styles(flex, row, space-between, "center");
+            transition: width 0.25s ease;
+
+           
+
+           
+        }
+
+        &--left {
+            @include navbar-sides(flex-start, 2rem);
+        }
+        &--right {
+            @include navbar-sides(flex-end, 1rem);
+        }
+    }
+
+    &__item {
+        // border: blue solid 1px;
+        // border-bottom: #FFB600 solid 1px;
+        // align-self: auto;
+        color: white;
+        text-decoration: none;
+        // margin-left: 1rem;
+        // padding: 0rem 1rem;
+        transition: margin-left 0.5s;
+
+        @media (max-width: 768px) {
+            // padding-left: 1rem;
+            margin: 0rem;
+            border-bottom: 1px solid #3C3B3A;
+            width: 100%;
+            padding: 1rem 2rem;
+            // padding-bottom: 0.5rem;
+        }
+
+        cursor: pointer;
+
+        &--invisible {
+            display: none;
+        }
+
+        &--login, &--logout{
+            
+            // display: flex;
+            // justify-content: center;
+            // text-align: center;
+            // vertical-align: middle;
+            text-align: center;
+            background-color: $navbar-button;
+            padding: 0.75rem;
+            border-bottom: #2b2b2b 2px solid;
+            // border: white 1px solid;
+
+            @include tablet {
+                margin-left: auto;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+
+    &__link {
+        // text-decoration: none;
+        // color: rgb(22, 74, 74);
+        color: white;
+
+        border-bottom: $navbar-background 2px solid;
+        // padding: 0.5rem;
+
+        &:hover {
+
+            color: $navbar-active;
+
+            @include tablet {
+                color: $navbar-active;
+                border-bottom: white 2px solid;
+            }
+        }
+
+        &--active {
+            color: $navbar-active;
+        }
+
+        &--sign {
+            &:hover {
+                color: $navbar-active;
+            }
+        }
+    }
+
+    &__mobile-buttons {
+        // display: flex;
+        // justify-content: flex-end;
+        @include tablet {
+            display: none;
+        }
+
+    }
+
+    &__button {
+      
+        margin-left: 2rem;
+        margin-top: 1rem;
+        // border: red solid 1px;
+        background-color: none;
+        background: none;
+        border: none;
+        transform: scale(1.5);
+        transition: all 0.25s linear;
+        // color: white;
+        &:hover {
+            transform: scale(1.75);
+            cursor: pointer;
+            // background-color: #c8c8c8;
+            // box-shadow: 1px 2px 8px 10px #c8c8c8;
+        }
+
+        &--clicked {
+            background-color: red;
+            display: none;
+            color: red;
+
+            svg {
+                color: white;
+            }
+        }
+       
+    }
+
+}

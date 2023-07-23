@@ -1,0 +1,112 @@
+@use './variables' as *;
+
+@mixin tablet {
+    @media (min-width: $tablet-width) {
+      @content;
+    }
+  }
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin reset-list-styles ($display-type, $flex-dir, $justify-flex-type, $align-itmes) {
+    list-style: none;
+    display: $display-type;
+    flex-direction: $flex-dir;
+    justify-content: $justify-flex-type;
+    align-items: $align-itmes;
+}
+
+// used for both login and sign up/register
+// useages: 
+// 1. accounts already exist,
+// 2. passwords missmatch
+// 3. invalid username/password
+@mixin formError () {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f2dede;
+  border: #ebccd1 solid 1px;
+  border-color:  #ebccd1;
+  color: rgb(186, 33, 33);
+  // height: 3rem;
+
+  @media (max-width: 300px) {
+    font-size: 0.75rem;
+  }
+}
+
+@mixin formLoginOrRegister () {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@mixin loginRegisterBtn {
+  border: #fdfbf7 1px solid;
+  background: none;
+  color: #007BBD;
+  &:hover {
+      cursor: pointer;
+      color: #006ba5;
+      border-bottom: #006ba5 solid 1px;
+  }
+}
+
+@mixin formLabelErr {
+  color: red;
+  @media (max-width: 300px) {
+    
+    font-size: 0.6rem;
+  }
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 0.75rem;
+}
+
+@mixin navbar-sides ($justify-content, $gap) {
+
+  // width: 100%;
+  // height: 100%;
+
+  @include tablet {
+
+    display: flex;
+    justify-content: $justify-content;
+    gap: $gap;
+    align-items: center;
+
+  }
+
+}
+
+@mixin modal-mobile {
+
+  border: 1px solid $modal-border;
+  box-shadow: 0px 0px 10px $modal-border;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 1rem 1rem 4rem 1rem;
+  background-color: $modal-background;
+
+}
+
+@mixin modal-tablet () {
+  width: 31.25rem;
+  padding: 1rem 1.25rem 4rem 1.25rem;
+  // position: fixed;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  z-index:1000;
+  margin-bottom: 12rem;
+}
+
+

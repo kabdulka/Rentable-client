@@ -1,0 +1,91 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.options-1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 30rem;
+    gap: 2rem;
+}
+
+.option-1 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    // cursor: pointer;
+    &:hover {
+        cursor: pointer;
+    }
+
+    &__input {
+        border-radius: 50%;
+        height: 1rem;
+        width: 1rem;
+        border: gray 1px solid;
+        background-color: white;
+
+        &--selected {
+            border: $navbar-active 4.75px solid;
+            transition: all 0.5s;
+        }
+    }
+    
+
+}
+
+.options-2 {
+    display: flex;
+    // flex-direction: column;
+    width: 100%;
+    // max-width: 30rem;
+    gap: 0.25rem;
+    flex-grow: 1;
+    // border: red solid 1px;
+
+    @include tablet {
+        gap: 1rem;
+    }
+}
+
+.option-2 {
+    display: flex;
+    cursor: pointer;
+    // align-items: center;
+    // justify-content: center;
+    // gap: 0.75rem;
+    position: relative;
+    // font-weight: 600;
+    // border: green solid 1px;
+    // padding: 1rem;
+    height: 3.25rem;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    // border-radius: 0.25rem;
+    // border:  2px solid;
+    background-color: white;
+    // background-color: white;
+    &__input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // position: absolute;
+        border-radius: 0.25rem;
+        // border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        border: rgb(236, 235, 235) 1px solid;
+        // border: gray 1px solid;
+        // z-index: 1;
+        background-color: transparent;
+
+        &--selected {
+            border: $navbar-active 1px solid;
+            transition: all 0.5s;
+            z-index: 2;
+        }
+    }
+}
+

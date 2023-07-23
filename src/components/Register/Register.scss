@@ -1,0 +1,127 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.register {
+
+    padding: 0.75rem;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    
+
+    @include tablet {
+        // padding: 6rem;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include desktop {
+        padding: 8rem;
+    }
+}
+
+.register-header__heading {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.register-header__close {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.register__wrapper {
+
+    @include modal-mobile;
+    
+    @include tablet {
+        @include modal-tablet();
+    }
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__container {
+        position: relative;
+        // border: rgb(255, 255, 255) solid 0.1px;
+        display: flex;
+        flex-direction: column;
+        // height: 3rem;
+        border-radius: 0.25rem;
+        // padding: 0.25rem 0.5rem;
+        background-color: white;
+
+        // &:focus {
+        //     outline: red solid 1px;
+        // }
+    }
+
+    &__input {
+        border: rgb(175, 175, 175) solid 0.5px;
+        padding: 1.65rem 0.5rem 0.35rem 0.5rem;
+        width: 100%;
+        border-radius: 0.25rem;
+        height: 100%;
+        &:focus {
+            border: none;
+            border: 0.5px solid rgb(63, 147, 227);
+        }
+    }
+
+    &__label {
+        // color: red;
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        // top: ;
+        // left: 3rem;
+        font-size: 0.75rem;
+        // display: none;
+        &--error {
+            @include formLabelErr;
+        }
+
+    }
+
+    &__submit {
+        background-color: #007BBD;
+        color: #fff;
+        padding: 0.75rem 0.5rem;
+        border: none;
+        border-radius: 0.25rem;
+        &:hover {
+            cursor: pointer;
+            background-color: #006ba5;
+        }
+    }
+
+    &__login {
+        @include formLoginOrRegister;
+    }
+
+    &__login-btn {
+        @include loginRegisterBtn;
+    }
+
+    &__login-text {
+        font-size: 1rem;
+        display: flex;
+        gap: 0.25rem;
+    }
+
+}
+
+.register__account-exists {
+    @include formError;
+}
+
+.register__passwords-missmatch {
+    @include formError;
+}

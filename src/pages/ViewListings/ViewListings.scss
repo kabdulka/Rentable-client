@@ -1,0 +1,11 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+
+.all-listings {
+    padding: 8rem 1rem;
+
+    &__title {
+        text-align: center;
+    }
+}

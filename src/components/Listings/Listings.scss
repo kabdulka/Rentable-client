@@ -1,0 +1,19 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.listings {
+    display: flex;
+    overflow: scroll;
+    height: 100%;
+
+    &__list {
+        display: flex;
+        gap: 2rem;
+        // height: 100%;
+        padding: 2rem;
+        overflow: scroll;
+        // overflow-x: auto;
+        width: 100%;
+      
+    }
+}

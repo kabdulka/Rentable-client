@@ -1,0 +1,11 @@
+
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.watchlist {
+    padding: 8rem 1rem;
+
+    &__title {
+        text-align: center;
+    }
+}
